@@ -22,6 +22,6 @@ class Counter{
 const counter1 = new Counter;
 const counter2 = new Counter;
 
-console.log(counter1.getInstance()===counter2.getInstance())
+console.log(counter1.getInstance()===counter2.getInstance());
 counter1.incrementCounter;
-console.log(counter1.getCounter()===counter2.getCounter())
+console.log(counter1.getCounter()===counter2.getCounter());
