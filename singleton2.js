@@ -30,3 +30,6 @@ const processManager = Singleton.getProcessManager();
 const processManager2 = Singleton.getProcessManager();
 
 console.log(processManager===processManager2)
+
+//Following Output are expected!!
+//true

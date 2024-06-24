@@ -41,7 +41,7 @@ function say(){
 const employeeFactory = new EmployeeFactory();
 const employe = [];
 
-employe.push(employeeFactory.create("Chamith",1))
+employe.push(employeeFactory.create("Chamith",1)) // 
 employe.push(employeeFactory.create("Thiraj",2))
 employe.push(employeeFactory.create("Nanny",1))
 employe.push(employeeFactory.create("Jack",3))
@@ -49,3 +49,8 @@ employe.push(employeeFactory.create("Jack",3))
 employe.forEach(emp =>{
     say.call(emp)
 })
+
+//Hi There I am Chamith and I am a Developer
+//Hi There I am Thiraj and I am a Quality Assure
+//Hi There I am Nanny and I am a Developer
+//Hi There I am Jack and I am a Tester
