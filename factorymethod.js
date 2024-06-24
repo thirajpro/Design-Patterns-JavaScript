@@ -1,3 +1,4 @@
+//Example 1
 function Developer(name) {
     this.name = name;
     this.type = "Developer"
@@ -69,7 +70,7 @@ const createUser = (firstName,lastName) => ({
     const user1 =  createUser("Jack","Vittori")
     const user2 =  createUser("John","Doe")
 
-    console.log(user1.fullName())
-    console.log(user2.fullName())
+    console.log(user1.fullName()) //Jack Vittori
+    console.log(user2.fullName()) //John Doe
 
 
