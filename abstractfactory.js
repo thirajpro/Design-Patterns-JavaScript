@@ -1,5 +1,5 @@
 //Let's assume that thers's a Vehicle factory which manufactures Car, Motorcyle and Trucks.
-
+//Creating Concrete factory for each vehicle type.
 class Car {
     constructor(){
         this.name = "Car"
@@ -28,7 +28,9 @@ class Car {
             console.log("Truck is Starting")
         }
     }
-
+    
+     //Abstract factory will will work as a single point of interact with concrete factories of each vehicles.
+    //It will call corresponding concrete factory through type parameter.
     const VehicleFactory ={
         createVehicle: function (type){
             switch(type){
