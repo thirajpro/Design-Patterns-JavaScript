@@ -41,7 +41,7 @@ function say(){
 const employeeFactory = new EmployeeFactory();
 const employe = [];
 
-employe.push(employeeFactory.create("Chamith",1)) // 
+employe.push(employeeFactory.create("Chamith",1)) 
 employe.push(employeeFactory.create("Thiraj",2))
 employe.push(employeeFactory.create("Nanny",1))
 employe.push(employeeFactory.create("Jack",3))
@@ -50,7 +50,26 @@ employe.forEach(emp =>{
     say.call(emp)
 })
 
+//Following output are expected!
 //Hi There I am Chamith and I am a Developer
 //Hi There I am Thiraj and I am a Quality Assure
 //Hi There I am Nanny and I am a Developer
 //Hi There I am Jack and I am a Tester
+
+//Example 2
+
+const createUser = (firstName,lastName) => ({
+    firstName,
+    lastName,
+    fullName () {
+        return `${firstName} ${lastName}`
+    },
+    });
+
+    const user1 =  createUser("Jack","Vittori")
+    const user2 =  createUser("John","Doe")
+
+    console.log(user1.fullName())
+    console.log(user2.fullName())
+
+
