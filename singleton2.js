@@ -1,4 +1,4 @@
-
+//Example 3
 
 function Process(state){
     this.state = state;
@@ -29,7 +29,4 @@ const Singleton = (function(){
 const processManager = Singleton.getProcessManager();
 const processManager2 = Singleton.getProcessManager();
 
-console.log(processManager===processManager2)
-
-//Following Output are expected!!
-//true
+console.log(processManager===processManager2); //true

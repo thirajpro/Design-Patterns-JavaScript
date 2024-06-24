@@ -1,3 +1,4 @@
+//Example 1
 let counter =0;
 
 class Counter{
@@ -22,10 +23,23 @@ class Counter{
 const counter1 = new Counter;
 const counter2 = new Counter;
 
-console.log(counter1.getInstance()===counter2.getInstance());
+console.log(counter1.getInstance()===counter2.getInstance()); //False
 counter1.incrementCounter;
-console.log(counter1.getCounter()===counter2.getCounter());
+console.log(counter1.getCounter()===counter2.getCounter()); //True
 
-//Following output are expected!!
-//False
-//True
+
+
+//Example 2
+const Config =  {
+    start : () => console.log("Started"),
+    stop : () => console.log("Stop")
+}
+
+Object.freeze(Config);
+
+Config.start();
+Config.stop();
+
+Config.name = "Albert"
+
+console.log(Config)
