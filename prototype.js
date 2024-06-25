@@ -30,7 +30,7 @@ console.log(person1.talk())//I can talk
 console.log(person2.run())//I can run
 console.log(person2.play())//I can play
 
-//Example 2
+//Example 2:Using Object.create 
 
 class Prototype{
     counter = 0;
@@ -42,9 +42,7 @@ class Prototype{
     }
     clone(){
         return Object.create(this)
-    }
-
-    
+    } 
 }
 
 const prototype = new Prototype();
