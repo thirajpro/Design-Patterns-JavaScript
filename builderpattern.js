@@ -30,7 +30,7 @@ const addListen = obj =>
     person2.listen();
 
     //Example 02: User Profile
-
+    //UserProfile Concrete Class
     class UserProfile{
         constructor(builder){
             this.name = builder.name;
@@ -41,6 +41,8 @@ const addListen = obj =>
             return `User Profile: Hi I am ${this.name}, and i am ${this.age} of age ${this.sex}`
         }
     }
+
+    //Create UserProfile Builder
     class UserProfileBuilder{
         setName(name){
             this.name = name;
@@ -58,6 +60,8 @@ const addListen = obj =>
             return new UserProfile(this);
         }
     }
+
+    //Using builder pattern
     const userProfile = new UserProfileBuilder()
         .setName("John")
         .setAge(31)
@@ -65,5 +69,5 @@ const addListen = obj =>
         .build();
 
     
-    console.log(userProfile.toString())
+    console.log(userProfile.toString()) //User Profile: Hi I am John, and i am 31 years of age Male
     
