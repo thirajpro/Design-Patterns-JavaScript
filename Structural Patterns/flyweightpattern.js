@@ -34,7 +34,7 @@ const Bookfactory = (function(){
 const BookRecordManager = (function(){
     const bookRecordDatabase = {};
     return {
-        addBookRecord: function (id, title,author,publisher,checkOutDate,checkOutMember, dueReturnDate, availability){
+        addBookRecord: function (id,title,author,publisher,isbn,checkOutDate,checkOutMember,dueReturnDate,availability){
             const book = Bookfactory.createBook(title,author,publisher,isbn);
             bookRecordDatabase[id]={
                 checkOutMember:checkOutMember,
@@ -42,8 +42,7 @@ const BookRecordManager = (function(){
                 dueReturnDate:dueReturnDate,
                 availability:availability,
                 book:book,
-
-            };
+            }
         },
         updateCheckOutStatus:function(bookID,newStatus,checkOutDate,checkOutMember,newReturnDate){
             const record = bookRecordDatabase[bookID];
@@ -64,8 +63,43 @@ const BookRecordManager = (function(){
     };
 });
 
-const book1 = new Book("JacaScriupt","Thiraj","Malk",1234455);
+const factory = new Bookfactory;
 
-book1.createBook(book1)
+const bookJavaScript = new factory.createBook("Javascript","Thiraj","Malik","1234")
 
-console.log(book1)
+console.log(bookJavaScript)
+
+
+
+
+//Example 02
+//Flyweight Object
+class Circle{
+    constructor(color){
+        this.color = color
+    }
+
+    draw(x,y,radius){
+         console.log(`Drawing a ${this.color} circle at ${x},${y} with a radius of ${radius}`)
+    }
+}
+//Flyweight Factory
+class CircleFactory{
+    constructor(){
+        this.circles = {};
+    }
+    getCircle(color){
+        if(!this.circles[color]){
+           this.circles[color] = new Circle(color);
+        console.log(`Creating a ${color} circle`) ;
+    }
+        return this.circles[color]
+    }
+}
+//FlyWeight Use
+const circleFactory = new CircleFactory()
+
+const redCircle =  circleFactory.getCircle("red")
+redCircle.draw(10,10,30)//Creating a red circle, Drawing a red circle at 10,10 with radius of 30
+
+
