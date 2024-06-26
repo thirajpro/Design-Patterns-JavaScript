@@ -1,5 +1,5 @@
-//Proxy Pattern : 
-
+//Proxy Pattern : provides a placeholder to controll of acces to another object, Also proxy addaddotional behvior when accessing priginal object.
+//Example 01;
 function ForexCurrency(){
    
     this.getValue = function(currency)
